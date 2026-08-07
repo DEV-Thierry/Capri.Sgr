@@ -4,6 +4,8 @@
     <File Path=".gitignore" />
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
+    <File Path="docs\features\cadastro-associado.md" />
+    <File Path="docs\README.md" />
     <File Path="global.json" />
     <File Path="README.md" />
   </Folder>

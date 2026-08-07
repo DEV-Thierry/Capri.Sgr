@@ -6,6 +6,10 @@ The project was generated using the [Clean.Architecture.Solution.Template](https
 
 Run `dotnet build` to build the solution.
 
+## Documentation
+
+Project documentation is available in [docs](docs/README.md).
+
 ## Run
 
 To run the application:

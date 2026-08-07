@@ -490,3 +490,8 @@ $RECYCLE.BIN/
 *.db
 *.db-shm
 *.db-wal
+.idea/.idea.Capri.Sgr/.idea/.gitignore
+.idea/.idea.Capri.Sgr/.idea/claudeCodeTabState.xml
+.idea/.idea.Capri.Sgr/.idea/encodings.xml
+.idea/.idea.Capri.Sgr/.idea/indexLayout.xml
+.idea/.idea.Capri.Sgr/.idea/vcs.xml
