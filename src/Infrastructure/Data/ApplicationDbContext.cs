@@ -19,6 +19,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<DerivedEffectExecution> DerivedEffectExecutions => Set<DerivedEffectExecution>();
 
+    public DbSet<Charge> Charges => Set<Charge>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
