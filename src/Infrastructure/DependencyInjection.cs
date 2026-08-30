@@ -1,5 +1,6 @@
 using Capri.Sgr.Application.Common.Interfaces;
 using Capri.Sgr.Infrastructure.Data;
+using Capri.Sgr.Domain.Constants;
 using Capri.Sgr.Infrastructure.Data.Interceptors;
 using Capri.Sgr.Infrastructure.Identity;
 using Capri.Sgr.Infrastructure.Services;
@@ -41,7 +42,11 @@ public static class DependencyInjection
             })
             .AddIdentityCookies();
 
-        builder.Services.AddAuthorizationBuilder();
+        builder.Services.AddAuthorizationBuilder()
+            .AddPolicy(AdministrativePermission.Policy(AdministrativeResources.InternalUsers, AdministrativeActions.Consult), policy => policy.RequireClaim(AdministrativePermission.ClaimType, AdministrativePermission.Create(AdministrativeResources.InternalUsers, AdministrativeActions.Consult)))
+            .AddPolicy(AdministrativePermission.Policy(AdministrativeResources.InternalUsers, AdministrativeActions.Maintain), policy => policy.RequireClaim(AdministrativePermission.ClaimType, AdministrativePermission.Create(AdministrativeResources.InternalUsers, AdministrativeActions.Maintain)))
+            .AddPolicy(AdministrativePermission.Policy(AdministrativeResources.InternalUsers, AdministrativeActions.Decide), policy => policy.RequireClaim(AdministrativePermission.ClaimType, AdministrativePermission.Create(AdministrativeResources.InternalUsers, AdministrativeActions.Decide)))
+            .AddPolicy(AdministrativePermission.Policy(AdministrativeResources.InternalUsers, AdministrativeActions.Configure), policy => policy.RequireClaim(AdministrativePermission.ClaimType, AdministrativePermission.Create(AdministrativeResources.InternalUsers, AdministrativeActions.Configure)));
 
         builder.Services
             .AddIdentityCore<ApplicationUser>()
