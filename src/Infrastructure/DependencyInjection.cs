@@ -1,7 +1,8 @@
-﻿using Capri.Sgr.Application.Common.Interfaces;
+using Capri.Sgr.Application.Common.Interfaces;
 using Capri.Sgr.Infrastructure.Data;
 using Capri.Sgr.Infrastructure.Data.Interceptors;
 using Capri.Sgr.Infrastructure.Identity;
+using Capri.Sgr.Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -51,6 +52,9 @@ public static class DependencyInjection
             .AddApiEndpoints();
 
         builder.Services.AddSingleton(TimeProvider.System);
+        builder.Services.AddSingleton<IOperationalClock, OperationalClock>();
+        builder.Services.AddScoped<IAuditStore, EfAuditStore>();
+        builder.Services.AddScoped<IDerivedEffectExecutionStore, EfDerivedEffectExecutionStore>();
         builder.Services.AddTransient<IIdentityService, IdentityService>();
     }
 }

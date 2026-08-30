@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using Capri.Sgr.Application.Common.Interfaces;
 using Capri.Sgr.Domain.Entities;
 using Capri.Sgr.Infrastructure.Identity;
@@ -14,6 +14,10 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
     public DbSet<TodoList> TodoLists => Set<TodoList>();
 
     public DbSet<TodoItem> TodoItems => Set<TodoItem>();
+
+    public DbSet<AuditRecord> AuditRecords => Set<AuditRecord>();
+
+    public DbSet<DerivedEffectExecution> DerivedEffectExecutions => Set<DerivedEffectExecution>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
