@@ -38,12 +38,68 @@ _Avoid_: rebanho, inventário
 
 ## Associação
 
+**Equipe da associação:**
+Pessoas autorizadas a operar internamente os processos e conteúdos da associação, com permissões concedidas conforme sua função.
+_Avoid_: staff, time interno, usuário administrativo
+
+**Usuário interno:**
+Identidade de acesso atribuída a uma pessoa da Equipe da associação para executar permissões administrativas em nome da associação.
+_Avoid_: administrador, staff, usuário da associação
+
+**Permissão administrativa:**
+Autorização específica concedida a um Usuário interno para consultar, criar, alterar, submeter, decidir ou configurar determinado recurso administrativo, independentemente de um cargo predefinido.
+_Avoid_: perfil fixo, função administrativa, capacidade
+
+**Portal público institucional:**
+Experiência digital acessível sem autenticação, pela qual qualquer pessoa consulta informações institucionais e conteúdos publicados pela associação.
+_Avoid_: site público, site institucional
+
+**Portal do Associado:**
+Área autenticada acessível a partir do Portal público institucional, na qual o Associado e, quando aplicável, seu Responsável acessam informações, acompanham solicitações e realizam operações autorizadas em nome do Associado.
+_Avoid_: área do cliente, portal do membro
+
+**Transferência de Animal:**
+Processo que formaliza a mudança de Proprietário atual de um ou mais Animais para outro Associado, preservando a rastreabilidade da titularidade.
+_Avoid_: venda de animal, troca de proprietário
+
+**Baixa de Plantel:**
+Registro do encerramento da propriedade ativa de um Animal no Plantel de um Associado, com motivo e data; não encerra necessariamente o ciclo de vida do Animal.
+_Avoid_: exclusão do animal, venda de animal
+
+**Motivo de Baixa de Plantel:**
+Classificação administrada que define o motivo do encerramento de uma propriedade ativa e as exigências documentais, de Transferência de Animal e de manutenção operacional associadas.
+_Avoid_: situação do animal, motivo de exclusão
+
+**Registro genealógico externo reconhecido:**
+Registro emitido por outra entidade e aceito pela associação para efeitos de regularização do Registro genealógico de um Animal.
+_Avoid_: registro provisório local
+
+**Resenha:**
+Processo de avaliação que subsidia a concessão de Registro genealógico provisório ou definitivo a um Animal.
+_Avoid_: inspeção informal
+
+**Registro genealógico:**
+Reconhecimento da associação sobre a identidade e genealogia de um Animal, progressivo entre sem registro, em regularização, provisório, definitivo ou castrado. A elegibilidade etária para o registro definitivo é uma condição do processo, não um estado separado.
+_Avoid_: cadastro do animal
+
+**Situação do Animal:**
+Condição operacional do ciclo de vida de um Animal, distinta de sua existência cadastral, de sua propriedade ativa e de seu Registro genealógico.
+_Avoid_: status
+
+**Publicação institucional:**
+Conteúdo editorial mantido pela Equipe da associação e disponibilizado no Portal público institucional, sujeito a governança, versionamento e Auditoria.
+_Avoid_: post, material, conteúdo publicado
+
+**Modelo de layout:**
+Composição pré-validada de navegação e blocos visuais que a associação pode escolher para o Portal público institucional, com personalização guiada e sem edição livre de estrutura.
+_Avoid_: tema livre, template editável
+
 **Tipo de associado**:
 Categoria fechada que define elegibilidade, cobrança, desconto, limites de Plantel e permissão de Afixo.
 _Avoid_: plano, perfil, modalidade
 
 **Solicitação de associação**:
-Pedido de ingresso de um interessado, iniciado como rascunho e encerrado por aprovação, rejeição ou cancelamento.
+Pedido de ingresso de um interessado, iniciado como rascunho e encerrado por aprovação, rejeição ou cancelamento. Após seu envio, concede acesso provisório à Área do Associado apenas para acompanhamento e regularização, enquanto operações dependentes de aprovação permanecem bloqueadas.
 _Avoid_: cadastro, proposta
 
 **Correção solicitada**:
@@ -59,8 +115,16 @@ Versão de Documento associado que participa da validação atual da Solicitaç�
 _Avoid_: último anexo
 
 **Afixo**:
-Identificador textual único de um Associado, classificado como prefixo ou sufixo, usado na formação do nome de Animal.
+Identificador textual único de um Associado, classificado como prefixo ou sufixo, herdado do Criador e usado na formação do nome composto de Animal quando existir. Como o Criador não muda, o Afixo do Animal permanece o mesmo; na ausência de Afixo do Criador, o nome composto coincide com o Nome-base.
 _Avoid_: marca, apelido
+
+**Nome-base do Animal**:
+Nome próprio do Animal antes da composição com o Afixo herdado do Criador. O nome do Animal é sempre gravado em letras maiúsculas, preservando a acentuação original.
+_Avoid_: nome exibido, nome completo
+
+**Nome composto do Animal**:
+Identificação nominal formada pelo Afixo do Criador, quando existente, e pelo Nome-base do Animal, sempre gravada em letras maiúsculas com preservação da acentuação.
+_Avoid_: nome de proprietário, apelido
 
 **Reenquadramento**:
 Revisão do Tipo de associado diante da quantidade de Animais de seu Plantel.

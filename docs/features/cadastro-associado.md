@@ -10,7 +10,7 @@ A linguagem canônica deste documento é definida pelo [glossário de domínio](
 
 O escopo cobre autoatendimento, cadastro assistido, análise e aprovação documental, cobrança manual, afixo, reenquadramento, notificações, auditoria e permissões granulares.
 
-Ficam fora de escopo: gateway/integracão PagSeguro, conciliação automática, parcelamento, pró-rata, assinatura eletrônica avançada, consultas governamentais de CPF/CNPJ, integração de CEP, expiração de documentos, retenção/anonimização/descarte automático LGPD, timezone configurável por associação, catálogo editável de tipos, permissões distintas por responsável e prova de poderes de representação de PJ. Antes da produção, é obrigatória uma política LGPD de retenção, anonimização e descarte.
+Ficam fora de escopo: gateway/integração PagSeguro, conciliação automática, parcelamento, pró-rata, assinatura eletrônica avançada, consultas governamentais de CPF/CNPJ, integração de CEP, expiração de documentos, retenção/anonimização/descarte automático LGPD, timezone configurável por associação, catálogo editável de tipos, permissões distintas por responsável e prova de poderes de representação de PJ. Antes da produção, é obrigatória uma política LGPD de retenção, anonimização e descarte.
 
 ## Canais, identidade e dados
 
