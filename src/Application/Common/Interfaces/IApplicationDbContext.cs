@@ -16,5 +16,7 @@ public interface IApplicationDbContext
 
     DbSet<Notification> Notifications { get; }
 
+    DbSet<AssociatedDocument> AssociatedDocuments { get; }
+
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }
