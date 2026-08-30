@@ -37,3 +37,4 @@ Este documento consolida os contratos de negócio atualmente expressos nas espec
 - Catálogo comum de eventos e idempotência.
 - Autoridade formal para decisões registrais e reapresentações.
 - Formato técnico, versionamento e idempotência da Cobrança única consolidada.
+- O dispatcher/outbox durável dos efeitos derivados e o catálogo de Permissões administrativas granulares serão tratados nos tickets específicos; esta fundação mantém somente o registro idempotente reprocessável e a autenticação/autorização de plataforma.
