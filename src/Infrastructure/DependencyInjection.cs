@@ -55,7 +55,8 @@ public static class DependencyInjection
         builder.Services.AddSingleton(TimeProvider.System);
         builder.Services.AddSingleton<IOperationalClock, OperationalClock>();
         builder.Services.AddScoped<IAuditStore, EfAuditStore>();
-        builder.Services.AddScoped<IAssociatedDocumentStore, EfAssociatedDocumentStore>();
+builder.Services.AddScoped<IAssociatedDocumentStore, EfAssociatedDocumentStore>();
+        builder.Services.AddScoped<IChargeStore, EfChargeStore>();
         builder.Services.AddScoped<IDerivedEffectExecutionStore, EfDerivedEffectExecutionStore>();
         builder.Services.AddScoped<INotificationStore, EfNotificationStore>();
         builder.Services.AddScoped<IPendingItemStore, EfPendingItemStore>();

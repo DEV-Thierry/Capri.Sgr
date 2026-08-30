@@ -19,11 +19,13 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<DerivedEffectExecution> DerivedEffectExecutions => Set<DerivedEffectExecution>();
 
-    public DbSet<PendingItem> PendingItems => Set<PendingItem>();
+public DbSet<PendingItem> PendingItems => Set<PendingItem>();
 
     public DbSet<Notification> Notifications => Set<Notification>();
 
     public DbSet<AssociatedDocument> AssociatedDocuments => Set<AssociatedDocument>();
+
+    public DbSet<Charge> Charges => Set<Charge>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
