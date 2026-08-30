@@ -1,4 +1,5 @@
 using Capri.Sgr.Application.Common.Interfaces;
+using Capri.Sgr.Application.Notifications;
 using Capri.Sgr.Infrastructure.Data;
 using Capri.Sgr.Infrastructure.Data.Interceptors;
 using Capri.Sgr.Infrastructure.Identity;
@@ -55,6 +56,9 @@ public static class DependencyInjection
         builder.Services.AddSingleton<IOperationalClock, OperationalClock>();
         builder.Services.AddScoped<IAuditStore, EfAuditStore>();
         builder.Services.AddScoped<IDerivedEffectExecutionStore, EfDerivedEffectExecutionStore>();
+        builder.Services.AddScoped<INotificationStore, EfNotificationStore>();
+        builder.Services.AddScoped<IPendingItemStore, EfPendingItemStore>();
+        builder.Services.AddScoped<NotificationDeliveryService>();
         builder.Services.AddTransient<IIdentityService, IdentityService>();
     }
 }
