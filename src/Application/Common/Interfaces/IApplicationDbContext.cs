@@ -12,5 +12,9 @@ public interface IApplicationDbContext
 
     DbSet<DerivedEffectExecution> DerivedEffectExecutions { get; }
 
+    DbSet<PendingItem> PendingItems { get; }
+
+    DbSet<Notification> Notifications { get; }
+
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

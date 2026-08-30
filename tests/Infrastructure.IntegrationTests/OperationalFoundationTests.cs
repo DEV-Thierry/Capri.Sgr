@@ -36,6 +36,25 @@ public class OperationalFoundationTests
         index.IsUnique.ShouldBeTrue();
     }
 
+    [Test]
+    public void PendingItemsAndNotificationsHavePersistedLifecycleFields()
+    {
+        using var context = CreateContext();
+
+        var pendingItemProperties = context.Model.FindEntityType(typeof(PendingItem))!
+            .GetProperties().Select(property => property.Name);
+        var notificationProperties = context.Model.FindEntityType(typeof(Notification))!
+            .GetProperties().Select(property => property.Name);
+
+        pendingItemProperties.ShouldContain(nameof(PendingItem.Cause));
+        pendingItemProperties.ShouldContain(nameof(PendingItem.Impact));
+        pendingItemProperties.ShouldContain(nameof(PendingItem.Regularization));
+        pendingItemProperties.ShouldContain(nameof(PendingItem.Status));
+        notificationProperties.ShouldContain(nameof(Notification.Status));
+        notificationProperties.ShouldContain(nameof(Notification.AttemptCount));
+        notificationProperties.ShouldContain(nameof(Notification.Failure));
+    }
+
     private static ApplicationDbContext CreateContext()
     {
         var options = new DbContextOptionsBuilder<ApplicationDbContext>()

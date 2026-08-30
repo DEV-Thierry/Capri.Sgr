@@ -19,6 +19,10 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<DerivedEffectExecution> DerivedEffectExecutions => Set<DerivedEffectExecution>();
 
+    public DbSet<PendingItem> PendingItems => Set<PendingItem>();
+
+    public DbSet<Notification> Notifications => Set<Notification>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
