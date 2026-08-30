@@ -12,5 +12,7 @@ public interface IApplicationDbContext
 
     DbSet<DerivedEffectExecution> DerivedEffectExecutions { get; }
 
+    DbSet<AssociatedDocument> AssociatedDocuments { get; }
+
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }
