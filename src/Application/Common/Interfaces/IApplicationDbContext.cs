@@ -18,5 +18,7 @@ public interface IApplicationDbContext
 
     DbSet<AssociatedDocument> AssociatedDocuments { get; }
 
+    DbSet<Charge> Charges { get; }
+
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

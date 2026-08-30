@@ -25,6 +25,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<AssociatedDocument> AssociatedDocuments => Set<AssociatedDocument>();
 
+    public DbSet<Charge> Charges => Set<Charge>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
