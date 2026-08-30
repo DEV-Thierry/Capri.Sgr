@@ -23,6 +23,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<Notification> Notifications => Set<Notification>();
 
+    public DbSet<AssociatedDocument> AssociatedDocuments => Set<AssociatedDocument>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
