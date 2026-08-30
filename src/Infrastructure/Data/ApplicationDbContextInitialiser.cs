@@ -1,4 +1,4 @@
-﻿using Capri.Sgr.Domain.Constants;
+using Capri.Sgr.Domain.Constants;
 using Capri.Sgr.Domain.Entities;
 using Capri.Sgr.Domain.ValueObjects;
 using Capri.Sgr.Infrastructure.Identity;
@@ -84,6 +84,7 @@ public class ApplicationDbContextInitialiser
             if (!string.IsNullOrWhiteSpace(administratorRole.Name))
             {
                 await _userManager.AddToRolesAsync(administrator, new [] { administratorRole.Name });
+                await _userManager.AddClaimsAsync(administrator, AdministrativePermission.All.Select(permission => new System.Security.Claims.Claim(AdministrativePermission.ClaimType, permission)));
             }
         }
 

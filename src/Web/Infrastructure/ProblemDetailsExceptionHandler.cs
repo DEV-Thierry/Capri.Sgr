@@ -34,6 +34,13 @@ public class ProblemDetailsExceptionHandler : IExceptionHandler
                 Title = "Unauthorized",
                 Type = "https://tools.ietf.org/html/rfc9110#section-15.5.2"
             }),
+            BusinessRuleValidationException bre => (StatusCodes.Status409Conflict, new ProblemDetails
+            {
+                Status = StatusCodes.Status409Conflict,
+                Title = "Business rule conflict",
+                Detail = bre.Message,
+                Type = "https://tools.ietf.org/html/rfc9110#section-15.5.10"
+            }),
             ForbiddenAccessException => (StatusCodes.Status403Forbidden, new ProblemDetails
             {
                 Status = StatusCodes.Status403Forbidden,
