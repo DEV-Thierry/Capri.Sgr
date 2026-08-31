@@ -6,6 +6,7 @@ namespace Capri.Sgr.Application.Common.Interfaces;
 public interface IAssociatedDocumentStore
 {
     Task<AssociatedDocument?> FindAsync(Guid documentId, CancellationToken cancellationToken);
+    Task<IReadOnlyCollection<AssociatedDocument>> ListByDossierAsync(string dossierId, CancellationToken cancellationToken);
     Task AddAsync(AssociatedDocument document, CancellationToken cancellationToken);
     Task SaveChangesAsync(CancellationToken cancellationToken);
 }

@@ -27,6 +27,12 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<Charge> Charges => Set<Charge>();
 
+    public DbSet<ResponsiblePerson> ResponsiblePeople => Set<ResponsiblePerson>();
+
+    public DbSet<LegalEntityMembershipApplication> LegalEntityMembershipApplications => Set<LegalEntityMembershipApplication>();
+
+    public DbSet<ResponsibleUserLink> ResponsibleUserLinks => Set<ResponsibleUserLink>();
+
     public DbSet<AssociateMembership> AssociateMemberships => Set<AssociateMembership>();
 
     public DbSet<PrefixProposal> PrefixProposals => Set<PrefixProposal>();

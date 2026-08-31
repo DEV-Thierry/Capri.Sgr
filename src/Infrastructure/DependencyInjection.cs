@@ -68,6 +68,7 @@ public static class DependencyInjection
         builder.Services.AddScoped<IPendingItemStore, EfPendingItemStore>();
         builder.Services.AddScoped<IAssociateMembershipStore, EfAssociateMembershipStore>();
         builder.Services.AddScoped<AssociateMembershipService>();
+        builder.Services.AddScoped<ILegalEntityResponsibleAuthorizer, EfLegalEntityResponsibleAuthorizer>();
         builder.Services.AddScoped<NotificationDeliveryService>();
         builder.Services.AddTransient<IIdentityService, IdentityService>();
     }

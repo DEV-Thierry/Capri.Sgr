@@ -20,6 +20,8 @@ public interface IApplicationDbContext
 
     DbSet<Charge> Charges { get; }
 
+    DbSet<LegalEntityMembershipApplication> LegalEntityMembershipApplications { get; }
+
     DbSet<AssociateMembership> AssociateMemberships { get; }
 
     DbSet<PrefixProposal> PrefixProposals { get; }

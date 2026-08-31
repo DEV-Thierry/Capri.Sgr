@@ -12,6 +12,12 @@ public sealed class EfAssociatedDocumentStore(ApplicationDbContext context) : IA
             .Include(document => document.Versions)
             .SingleOrDefaultAsync(document => document.Id == documentId, cancellationToken);
 
+    public async Task<IReadOnlyCollection<AssociatedDocument>> ListByDossierAsync(string dossierId, CancellationToken cancellationToken) =>
+        await context.AssociatedDocuments
+            .Include(document => document.Versions)
+            .Where(document => document.DossierId == dossierId)
+            .ToListAsync(cancellationToken);
+
     public Task AddAsync(AssociatedDocument document, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(document);
