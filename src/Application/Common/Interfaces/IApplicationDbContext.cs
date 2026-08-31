@@ -20,5 +20,11 @@ public interface IApplicationDbContext
 
     DbSet<Charge> Charges { get; }
 
+    DbSet<AssociateMembership> AssociateMemberships { get; }
+
+    DbSet<PrefixProposal> PrefixProposals { get; }
+
+    DbSet<ReclassificationProposal> ReclassificationProposals { get; }
+
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

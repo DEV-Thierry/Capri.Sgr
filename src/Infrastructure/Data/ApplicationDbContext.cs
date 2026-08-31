@@ -27,6 +27,12 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<Charge> Charges => Set<Charge>();
 
+    public DbSet<AssociateMembership> AssociateMemberships => Set<AssociateMembership>();
+
+    public DbSet<PrefixProposal> PrefixProposals => Set<PrefixProposal>();
+
+    public DbSet<ReclassificationProposal> ReclassificationProposals => Set<ReclassificationProposal>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

@@ -1,5 +1,6 @@
 using Capri.Sgr.Application.Common.Interfaces;
 using Capri.Sgr.Application.Notifications;
+using Capri.Sgr.Application.AssociateMemberships;
 using Capri.Sgr.Infrastructure.Data;
 using Capri.Sgr.Domain.Constants;
 using Capri.Sgr.Infrastructure.Data.Interceptors;
@@ -65,6 +66,8 @@ public static class DependencyInjection
         builder.Services.AddScoped<IDerivedEffectExecutionStore, EfDerivedEffectExecutionStore>();
         builder.Services.AddScoped<INotificationStore, EfNotificationStore>();
         builder.Services.AddScoped<IPendingItemStore, EfPendingItemStore>();
+        builder.Services.AddScoped<IAssociateMembershipStore, EfAssociateMembershipStore>();
+        builder.Services.AddScoped<AssociateMembershipService>();
         builder.Services.AddScoped<NotificationDeliveryService>();
         builder.Services.AddTransient<IIdentityService, IdentityService>();
     }
