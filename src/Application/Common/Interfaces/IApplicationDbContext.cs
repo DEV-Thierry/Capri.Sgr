@@ -22,6 +22,8 @@ public interface IApplicationDbContext
 
     DbSet<LegalEntityMembershipApplication> LegalEntityMembershipApplications { get; }
 
+    DbSet<MembershipApplication> MembershipApplications { get; }
+
     DbSet<AssociateMembership> AssociateMemberships { get; }
 
     DbSet<PrefixProposal> PrefixProposals { get; }

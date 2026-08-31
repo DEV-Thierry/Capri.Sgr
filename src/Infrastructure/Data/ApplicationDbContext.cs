@@ -31,6 +31,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<LegalEntityMembershipApplication> LegalEntityMembershipApplications => Set<LegalEntityMembershipApplication>();
 
+    public DbSet<MembershipApplication> MembershipApplications => Set<MembershipApplication>();
+
     public DbSet<ResponsibleUserLink> ResponsibleUserLinks => Set<ResponsibleUserLink>();
 
     public DbSet<AssociateMembership> AssociateMemberships => Set<AssociateMembership>();

@@ -18,6 +18,15 @@ public sealed class EfAssociatedDocumentStore(ApplicationDbContext context) : IA
             .Where(document => document.DossierId == dossierId)
             .ToListAsync(cancellationToken);
 
+    public Task<bool> HasCurrentDocumentAsync(string dossierId, string documentType, CancellationToken cancellationToken) =>
+        context.AssociatedDocuments
+            .Include(document => document.Versions)
+            .AnyAsync(document => document.DossierId == dossierId &&
+                                  document.DocumentType == documentType &&
+                                  document.Versions.Any(version => version.IsCurrent &&
+                                      version.Status != AssociatedDocumentVersionStatus.PendingSecureStorage &&
+                                      version.StorageReference != null && version.StorageAuditRecordId != null), cancellationToken);
+
     public Task AddAsync(AssociatedDocument document, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(document);
