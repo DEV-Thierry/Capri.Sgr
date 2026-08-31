@@ -33,6 +33,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<MembershipApplication> MembershipApplications => Set<MembershipApplication>();
 
+    public DbSet<InstitutionalPublication> InstitutionalPublications => Set<InstitutionalPublication>();
+
     public DbSet<ResponsibleUserLink> ResponsibleUserLinks => Set<ResponsibleUserLink>();
 
     public DbSet<AssociateMembership> AssociateMemberships => Set<AssociateMembership>();

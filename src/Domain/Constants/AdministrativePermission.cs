@@ -4,8 +4,9 @@ namespace Capri.Sgr.Domain.Constants;
 public static class AdministrativeResources
 {
     public const string InternalUsers = "internal-users";
+    public const string InstitutionalPublications = "institutional-publications";
 
-    public static IReadOnlyCollection<string> All { get; } = [InternalUsers];
+    public static IReadOnlyCollection<string> All { get; } = [InternalUsers, InstitutionalPublications];
 }
 
 /// <summary>Names the independently grantable operations for an administrative resource.</summary>

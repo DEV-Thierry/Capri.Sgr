@@ -2,6 +2,7 @@ using Capri.Sgr.Application.Common.Interfaces;
 using Capri.Sgr.Application.Notifications;
 using Capri.Sgr.Application.AssociateMemberships;
 using Capri.Sgr.Application.MemberApplications;
+using Capri.Sgr.Application.Publications;
 using Capri.Sgr.Infrastructure.Data;
 using Capri.Sgr.Domain.Constants;
 using Capri.Sgr.Infrastructure.Data.Interceptors;
@@ -74,6 +75,8 @@ public static class DependencyInjection
         builder.Services.AddScoped<IMembershipApplicationStore, EfMembershipApplicationStore>();
         builder.Services.AddSingleton<IInitialMembershipChargePolicy, NoInitialMembershipChargePolicy>();
         builder.Services.AddScoped<PfMembershipApplicationService>();
+        builder.Services.AddScoped<InstitutionalPublicationService>();
+        builder.Services.AddScoped<PublicPublicationQueries>();
         builder.Services.AddTransient<IIdentityService, IdentityService>();
     }
 }
