@@ -12,5 +12,25 @@ public interface IApplicationDbContext
 
     DbSet<DerivedEffectExecution> DerivedEffectExecutions { get; }
 
+    DbSet<PendingItem> PendingItems { get; }
+
+    DbSet<Notification> Notifications { get; }
+
+    DbSet<AssociatedDocument> AssociatedDocuments { get; }
+
+    DbSet<Charge> Charges { get; }
+
+    DbSet<LegalEntityMembershipApplication> LegalEntityMembershipApplications { get; }
+
+    DbSet<MembershipApplication> MembershipApplications { get; }
+
+    DbSet<InstitutionalPublication> InstitutionalPublications { get; }
+
+    DbSet<AssociateMembership> AssociateMemberships { get; }
+
+    DbSet<PrefixProposal> PrefixProposals { get; }
+
+    DbSet<ReclassificationProposal> ReclassificationProposals { get; }
+
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

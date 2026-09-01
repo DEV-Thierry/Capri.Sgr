@@ -19,6 +19,30 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
 
     public DbSet<DerivedEffectExecution> DerivedEffectExecutions => Set<DerivedEffectExecution>();
 
+    public DbSet<PendingItem> PendingItems => Set<PendingItem>();
+
+    public DbSet<Notification> Notifications => Set<Notification>();
+
+    public DbSet<AssociatedDocument> AssociatedDocuments => Set<AssociatedDocument>();
+
+    public DbSet<Charge> Charges => Set<Charge>();
+
+    public DbSet<ResponsiblePerson> ResponsiblePeople => Set<ResponsiblePerson>();
+
+    public DbSet<LegalEntityMembershipApplication> LegalEntityMembershipApplications => Set<LegalEntityMembershipApplication>();
+
+    public DbSet<MembershipApplication> MembershipApplications => Set<MembershipApplication>();
+
+    public DbSet<InstitutionalPublication> InstitutionalPublications => Set<InstitutionalPublication>();
+
+    public DbSet<ResponsibleUserLink> ResponsibleUserLinks => Set<ResponsibleUserLink>();
+
+    public DbSet<AssociateMembership> AssociateMemberships => Set<AssociateMembership>();
+
+    public DbSet<PrefixProposal> PrefixProposals => Set<PrefixProposal>();
+
+    public DbSet<ReclassificationProposal> ReclassificationProposals => Set<ReclassificationProposal>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
